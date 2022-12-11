@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="frota-db-2022-1-banco-de-dados-main/src/main/java"/>
+	<classpathentry kind="lib" path="frota-db-2022-1-banco-de-dados-main/bin/postgresql-42.4.0.jar"/>
+	<classpathentry kind="lib" path="frota-db-2022-1-banco-de-dados-main/postgresql-42.4.0.jar"/>
+	<classpathentry kind="output" path="frota-db-2022-1-banco-de-dados-main/out/production/frota-db-2022-1-banco-de-dados"/>
+</classpath>
