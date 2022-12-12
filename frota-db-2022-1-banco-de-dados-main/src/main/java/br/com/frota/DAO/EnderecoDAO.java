@@ -14,7 +14,6 @@ public class EnderecoDAO extends ConexaoDB {
     private static final String SELECT_ENDERECO_BY_ID = "SELECT rua, numero, complemento, bairro, cep, cidade, laboratorio_id FROM endereco WHERE id = ?";
     private static final String SELECT_ALL_ENDERECO = "SELECT * FROM endereco;";
     private static final String DELETE_ENDERECO_SQL = "DELETE FROM endereco WHERE id = ?;";
-//	private static final String BUSCAR_POR_DESCRICAO_MARCA_SQL = "DELETE FROM marca WHERE descricao = ?;";
     private static final String UPDATE_ENDERECO_SQL = "UPDATE endereco SET rua = ?, numero = ?, complemento = ?, bairro = ?, cep = ?, cidade = ?, laboratorio_id = ? WHERE id = ?;";
     private static final String TOTAL = "SELECT count(1) FROM endereco;";
 
@@ -68,14 +67,16 @@ public class EnderecoDAO extends ConexaoDB {
             ResultSet rs = preparedStatement.executeQuery();
 
             while (rs.next()) {
+
+                String rua = rs.getString("rua");
+                String numero = rs.getString("numero");
+                String complemento = rs.getString("complemento");
+                String bairro = rs.getString("bairro");
+                String cep = rs.getString("cep");
+                String cidade = rs.getString("cidade");
+                Integer laboratorio_id = rs.getInt("laboratorio_id");
                 
-                String descricao = rs.getString("descricao");
-                String cnes = rs.getString("cnes");
-                String cnpj = rs.getString("cnpj");
-                String crbm = rs.getString("crbm");
-                String nome_fantasia = rs.getString("nome_fantasia");
-                
-                entidade = new ENDERECO(id, descricao, cnes, cnpj, crbm, nome_fantasia);
+                entidade = new Endereco(id, rua, numero, complemento, bairro, cep, cidade, laboratorio_id);
             }
         } catch (SQLException e) {
             printSQLException(e);
@@ -85,20 +86,22 @@ public class EnderecoDAO extends ConexaoDB {
         return entidade;
     }
 
-    public List<ENDERECO> selectAllENDERECOs() {
-        List<ENDERECO> entidades = new ArrayList<>();
+    public List<Endereco> selectAllEnderecos() {
+        List<Endereco> entidades = new ArrayList<>();
         try (PreparedStatement preparedStatement = prepararSQL(SELECT_ALL_ENDERECO)) {
             ResultSet rs = preparedStatement.executeQuery();
 
             while (rs.next()) {
                 int id = rs.getInt("id");
-                String descricao = rs.getString("descricao");
-                String cnes = rs.getString("cnes");
-                String cnpj = rs.getString("cnpj");
-                String crbm = rs.getString("crbm");
-                String nome_fantasia = rs.getString("nome_fantasia");
+                String rua = rs.getString("rua");
+                String numero = rs.getString("numero");
+                String complemento = rs.getString("complemento");
+                String bairro = rs.getString("bairro");
+                String cep = rs.getString("cep");
+                String cidade = rs.getString("cidade");
+                Integer laboratorio_id = rs.getInt("laboratorio_id");
                 
-                entidades.add(new ENDERECO(id, descricao, cnes, cnpj, crbm, nome_fantasia));
+                entidades.add(new Endereco(id, rua, numero, complemento, bairro, cep, cidade, laboratorio_id));
             }
         } catch (SQLException e) {
             printSQLException(e);
@@ -108,7 +111,7 @@ public class EnderecoDAO extends ConexaoDB {
         return entidades;
     }
 
-    public boolean deleteENDERECO(int id) throws SQLException {
+    public boolean deleteEndereco(int id) throws SQLException {
         try (PreparedStatement statement = prepararSQL(DELETE_ENDERECO_SQL)) {
             statement.setInt(1, id);
             return statement.executeUpdate() > 0;
@@ -117,15 +120,17 @@ public class EnderecoDAO extends ConexaoDB {
         }
     }
 
-    public boolean updateENDERECO(ENDERECO entidade) throws SQLException {
+    public boolean updateEndereco(Endereco entidade) throws SQLException {
         try (PreparedStatement statement = prepararSQL(UPDATE_ENDERECO_SQL)) {
 
-            statement.setString(1, entidade.getCnes());
-            statement.setString(2, entidade.getCnpj());
-            statement.setString(3, entidade.getCrbm());
-            statement.setString(4, entidade.getDescricao());
-            statement.setString(5, entidade.getNome_fantasia());
-            statement.setInt(6, entidade.getId());
+            statement.setString(1, entidade.getNumero());
+            statement.setString(2, entidade.getComplemento());
+            statement.setString(3, entidade.getBairro());
+            statement.setString(4, entidade.getRua());
+            statement.setString(5, entidade.getCep());
+            statement.setString(6, entidade.getCidade());
+            statement.setInt(7, entidade.getLaboratorio_id());
+            statement.setInt(8, entidade.getId());
 
             return statement.executeUpdate() > 0;
         } catch (ClassNotFoundException e) {

@@ -119,4 +119,5 @@ public class ContatoDAO extends ConexaoDB{
             throw new RuntimeException(e);
         }
     }
+
 }

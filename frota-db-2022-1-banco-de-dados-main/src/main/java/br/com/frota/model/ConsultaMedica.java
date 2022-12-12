@@ -1,6 +1,6 @@
 package br.com.frota.model;
 
-import java.security.Timestamp;
+import java.sql.Timestamp;
 
 public class ConsultaMedica extends GenericModel {
     private Timestamp dt_consulta;
