@@ -78,7 +78,6 @@ public class MedicoHasEspecialidadeDAO extends ConexaoDB{
             ResultSet rs = preparedStatement.executeQuery();
 
             while (rs.next()) {
-            	int id = rs.getInt("id");
             	Integer medico_id = rs.getInt("medico_id");
                 int especialidade_id = rs.getInt("especialidade_id");
                 

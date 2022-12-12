@@ -83,7 +83,6 @@ public class ResponsavelTecnicoHasLaboratorioDAO extends ConexaoDB{
             ResultSet rs = preparedStatement.executeQuery();
 
             while (rs.next()) {
-            	int id = rs.getInt("id");
 
             	Integer responsavel_tecnico_id = rs.getInt("responsavel_tecnico_id");
                 Integer laboratorio_id = rs.getInt("laboratorio_id");
