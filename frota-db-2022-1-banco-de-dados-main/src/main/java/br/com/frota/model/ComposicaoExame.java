@@ -25,5 +25,13 @@ public class ComposicaoExame extends GenericModel{
     public void setUnidade_medida_id(Integer unidade_medida_id) {
         this.unidade_medida_id = unidade_medida_id;
     }
+    @Override
+    public String toString() {
+        return "Composição Exame {\n" +
+                "id='" + this.getId() + "\'\n" +
+                "descricao='" + descricao + "\'\n" +
+                "unidade_medida_id='" + unidade_medida_id + "\'\n" +
+                '}';
+    }
     
 }

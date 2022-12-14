@@ -39,10 +39,10 @@ public class LaboratorioDAO extends ConexaoDB {
         try (PreparedStatement preparedStatement = prepararSQL(INSERT_LABORATORIO_SQL, 
         		java.sql.Statement.RETURN_GENERATED_KEYS)) {
         	
-            preparedStatement.setString(1, entidade.getCnes());
-            preparedStatement.setString(2, entidade.getCnpj());
-            preparedStatement.setString(3, entidade.getCrbm());
-            preparedStatement.setString(4, entidade.getDescricao());
+            preparedStatement.setString(2, entidade.getCnes());
+            preparedStatement.setString(3, entidade.getCnpj());
+            preparedStatement.setString(4, entidade.getCrbm());
+            preparedStatement.setString(1, entidade.getDescricao());
             preparedStatement.setString(5, entidade.getNome_fantasia());
             
             preparedStatement.executeUpdate();
@@ -119,10 +119,10 @@ public class LaboratorioDAO extends ConexaoDB {
     public boolean updateLaboratorio(Laboratorio entidade) throws SQLException {
         try (PreparedStatement statement = prepararSQL(UPDATE_LABORATORIO_SQL)) {
 
-            statement.setString(1, entidade.getCnes());
-            statement.setString(2, entidade.getCnpj());
-            statement.setString(3, entidade.getCrbm());
-            statement.setString(4, entidade.getDescricao());
+            statement.setString(2, entidade.getCnes());
+            statement.setString(3, entidade.getCnpj());
+            statement.setString(4, entidade.getCrbm());
+            statement.setString(1, entidade.getDescricao());
             statement.setString(5, entidade.getNome_fantasia());
             statement.setInt(6, entidade.getId());
 

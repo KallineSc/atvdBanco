@@ -1,8 +1,14 @@
 package br.com.frota.model;
 
+import java.util.List;
+import javax.persistence.*;
+
 public class Especialidade extends GenericModel{
 	private String descricao; 
 	private String observacao;
+
+	@ManyToMany(mappedBy="especialidade", cascade = CascadeType.ALL)
+  	private List<Medico> medico;
 		
 
     public Especialidade(String descricao, String observacao) {
@@ -40,5 +46,13 @@ public class Especialidade extends GenericModel{
                 "observacao='" + observacao + "\'\n" +
                 '}';
     }
+
+	public List<Medico> getMedico() {
+		return medico;
+	}
+
+	public void setMedico(List<Medico> medico) {
+		this.medico = medico;
+	}
 }
 	

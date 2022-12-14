@@ -12,7 +12,7 @@ import br.com.frota.servico.ServicoMedico;
 import java.sql.SQLException;
 import java.util.List;
 
-public class TesteMedico {
+public class Teste {
     static MedicoDAO medicoDAO = new MedicoDAO();
     static LaboratorioDAO laboratorioDAO = new LaboratorioDAO();
     static ServicoMedico servicoMedico = new ServicoMedico();

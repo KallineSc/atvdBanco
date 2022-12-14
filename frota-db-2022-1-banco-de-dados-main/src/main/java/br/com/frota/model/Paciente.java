@@ -30,7 +30,14 @@ public class Paciente extends GenericModel{
     public void setDt_nascimento(Timestamp dt_nascimento) {
         this.dt_nascimento = dt_nascimento;
     }
-    
+    @Override
+    public String toString() {
+        return "Paciente {\n" +
+                "id='" + this.getId() + "\'\n" +
+                "nome='" + nome + "\'\n" +
+                "dt_nascimento='" + dt_nascimento + "\'\n" +
+                '}';
+    }
 
     
 }

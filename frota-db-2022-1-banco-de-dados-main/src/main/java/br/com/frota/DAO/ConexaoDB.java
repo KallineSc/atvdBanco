@@ -17,7 +17,7 @@ public class ConexaoDB {
         Connection conexaoDB = DriverManager.getConnection(dbURL.concat(dbName), username, password);
 
         if (conexaoDB != null) {
-            System.out.println("Conexão com o banco de dados gerada com sucesso! ");
+            // System.out.println("Conexão com o banco de dados gerada com sucesso! ");
             return conexaoDB;
         } else {
             throw new RuntimeException("Ops! Erro ao conectar com o banco de dados. :(");

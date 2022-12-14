@@ -45,5 +45,16 @@ public class HabilitacaoExame extends GenericModel{
         this.tipo_exame = tipo_exame;
     }
 
+    @Override
+    public String toString() {
+        return "Habilitação Exame {\n" +
+                "id='" + this.getId() + "\'\n" +
+                "observacao='" + observacao + "\'\n" +
+                "custo='" + custo + "\'\n" +
+                "laboratorio_id='" + laboratorio_id + "\'\n" +
+                "tipo_exame='" + tipo_exame + "\'\n" +
+                '}';
+    }
+
     
 }

@@ -28,4 +28,13 @@ public class TipoExame extends GenericModel{
         this.observacao = observacao;
     }
     
+    @Override
+    public String toString() {
+        return "Tipo Exame {\n" +
+                "id='" + this.getId() + "\'\n" +
+                "descricao='" + descricao + "\'\n" +
+                "observacao='" + observacao + "\'\n" +
+                '}';
+    }
+
 }

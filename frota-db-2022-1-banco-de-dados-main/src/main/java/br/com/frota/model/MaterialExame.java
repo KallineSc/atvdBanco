@@ -27,4 +27,13 @@ public class MaterialExame extends GenericModel {
         this.observacao = observacao;
     }
 
+    @Override
+    public String toString() {
+        return "Material Exame {\n" +
+                "id='" + this.getId() + "\'\n" +
+                "material='" + material + "\'\n" +
+                "observacao='" + observacao + "\'\n" +
+                '}';
+    }
+
 }

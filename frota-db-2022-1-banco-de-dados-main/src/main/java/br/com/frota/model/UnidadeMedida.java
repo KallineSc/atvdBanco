@@ -18,5 +18,13 @@ public class UnidadeMedida extends GenericModel{
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
+
+    @Override
+    public String toString() {
+        return "Unidade Medida {\n" +
+                "id='" + this.getId() + "\'\n" +
+                "descricao='" + descricao + "\'\n" +
+                '}';
+    }
     
 }
